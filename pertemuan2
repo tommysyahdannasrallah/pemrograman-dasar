@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyNN9sGcOrQTml5Cs7GZeFKy",
+      "authorship_tag": "ABX9TyPphSGvE8VAPWO5wvGxMcfc",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -28,13 +28,13 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 14,
+      "execution_count": 7,
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "HjNhjGZCo6xM",
-        "outputId": "c547ae93-ac66-470c-92be-e8e1f1809073"
+        "outputId": "846c3113-e558-4b6b-d2fd-0002f2dfa32c"
       },
       "outputs": [
         {
@@ -83,9 +83,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "xUuCfudjaa_L",
-        "outputId": "71eaecbe-d2a1-4f48-e421-8d7c9ebbe25b"
+        "outputId": "492aab8f-2327-470e-a7a1-a6e9503b2219"
       },
-      "execution_count": 15,
+      "execution_count": 8,
       "outputs": [
         {
           "output_type": "stream",
@@ -118,9 +118,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "M8DPv3KdbNj3",
-        "outputId": "45de8d88-5a3d-4b7f-d8d0-2c7d18770f38"
+        "outputId": "951540b2-9045-44aa-80b4-414bc3d729b5"
       },
-      "execution_count": 16,
+      "execution_count": 9,
       "outputs": [
         {
           "output_type": "stream",
@@ -155,9 +155,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "zUfs12vph-j0",
-        "outputId": "d36cc493-7695-4cc6-cc2e-2cea62a7a271"
+        "outputId": "6ae3d052-fb82-4d66-cdb8-74ed2653083e"
       },
-      "execution_count": 17,
+      "execution_count": 10,
       "outputs": [
         {
           "output_type": "stream",
@@ -176,25 +176,104 @@
       "source": [
         "# 1 membuat dictionary spesifikasi autor listrik\n",
         "motor_listrik = {\n",
+        "  \"nama\": \"motor induksi AC\",\n",
+        "  \"daya_kw\": 15.0,\n",
+        "  \"tegangan_v\": 300,\n",
+        "  \"rpm\" : 1450\n",
         "\n",
         "}\n",
         "\n",
-        ""
+        "# cetak salah satu nilai lewat key-nya (misalnya,daya_kw)\n",
+        "print(f\"Daya motor :{motor_listrik['daya_kw']} kw\")\n",
+        "\n",
+        "#ubah nilai rpm\n",
+        "motor_listrik['rpm'] = 1500\n",
+        "\n",
+        "# cetak ulang seluruh dictionary\n",
+        "print(\"\\nspesifikasi motor listrik setelah perubahan rpm:\")\n",
+        "print(motor_listrik)\n"
       ],
       "metadata": {
-        "id": "Ea0OGp3KoTY1"
+        "id": "Ea0OGp3KoTY1",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "6aee76ac-8ace-4ecc-a093-55ca8551ae54"
       },
-      "execution_count": 18,
-      "outputs": []
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Daya motor :15.0 kw\n",
+            "\n",
+            "spesifikasi motor listrik setelah perubahan rpm:\n",
+            "{'nama': 'motor induksi AC', 'daya_kw': 15.0, 'tegangan_v': 300, 'rpm': 1500}\n"
+          ]
+        }
+      ]
     },
     {
       "cell_type": "code",
+      "source": [
+        "\n",
+        "# inisialisasi daftar unit pembangkit\n",
+        "pembangkit = [\n",
+        "    {\"nama\": \"unit-1\", \"kapasitas_mw\": 100, \"status\": \"operasi\"},\n",
+        "    {\"nama\": \"unit-2\", \"kapasitas_mw\": 150, \"status\": \"operasi\"},\n",
+        "    {\"nama\": \"unit-3\", \"kapasitas_mw\": 80, \"status\": \"pemeliharaan\"},\n",
+        "\n",
+        "]\n",
+        "\n",
+        "# (a) cetak nama unit kedua\n",
+        "print(f\"Nama unit kedua: {pembangkit[1]['nama']}\")\n",
+        "\n",
+        "# (b) ubah status salah satu unit (misal: unit-3 menjadi 'siaga')\n",
+        "pembangkit[2]['status'] = \"siaga\"\n",
+        "\n",
+        "# (c) tambahkan satu unit baru dengan fungsi append()\n",
+        "unit_baru = {\"nama\": \"unit-4\", \"kapasitas_mw\": 120, \"status\": \"operasi\"}\n",
+        "pembangkit.append(unit_baru)\n",
+        "print(f\"\\nUnit baru ditambahkan: {unit_baru['nama']}\")\n",
+        "\n",
+        "# (d) cetak seluruh data unit pembangkit setelah perubahan\n",
+        "print(\"\\nseluruh  data unit pembangkit:\")\n",
+        "for unit in pembangkit:\n",
+        "    print(unit)"
+      ],
+      "metadata": {
+        "id": "0xfUdIq-smdo",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "af5c5d46-6699-4e62-d3b4-40210a1b3a44"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Nama unit kedua: unit-2\n",
+            "\n",
+            "Unit baru ditambahkan: unit-4\n",
+            "\n",
+            "seluruh  data unit pembangkit:\n",
+            "{'nama': 'unit-1', 'kapasitas_mw': 100, 'status': 'operasi'}\n",
+            "{'nama': 'unit-2', 'kapasitas_mw': 150, 'status': 'operasi'}\n",
+            "{'nama': 'unit-3', 'kapasitas_mw': 80, 'status': 'siaga'}\n",
+            "{'nama': 'unit-4', 'kapasitas_mw': 120, 'status': 'operasi'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
       "source": [],
       "metadata": {
-        "id": "0xfUdIq-smdo"
-      },
-      "execution_count": null,
-      "outputs": []
+        "id": "k9q9JtA6FE3Y"
+      }
     }
   ]
 }
