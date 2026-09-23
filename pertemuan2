@@ -1,0 +1,200 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNN9sGcOrQTml5Cs7GZeFKy",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/tommysyahdannasrallah/pemrograman-dasar/blob/main/pertemuan2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 14,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HjNhjGZCo6xM",
+        "outputId": "c547ae93-ac66-470c-92be-e8e1f1809073"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "18\n",
+            "6\n",
+            "monocrystalline\n",
+            "True\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Contoh: data sebuah panel surya\n",
+        "tegangan = 18\n",
+        "arus = 6\n",
+        "nama_alat = \"monocrystalline\"\n",
+        "aktif = True\n",
+        "\n",
+        "print(tegangan)\n",
+        "print(arus)\n",
+        "print(nama_alat)\n",
+        "print(aktif)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Deklarasi tipe primitif dengan konteks kelistrikan\n",
+        "frekuensi = 50                 # int  — Hz\n",
+        "faktor_daya = 0.85             # float — cos φ\n",
+        "tiga_fasa = True               # bool\n",
+        "label = \"Trafo Distribusi\"     # str\n",
+        "impedansi = complex(4, 3)      # complex — Z = R + jX (Ohm)\n",
+        "\n",
+        "\n",
+        "print(frekuensi,type(frekuensi))\n",
+        "print(faktor_daya,type(faktor_daya))\n",
+        "print(tiga_fasa,type(tiga_fasa))\n",
+        "print(label,type(label))\n",
+        "print(impedansi,type(impedansi))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xUuCfudjaa_L",
+        "outputId": "71eaecbe-d2a1-4f48-e421-8d7c9ebbe25b"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "50 <class 'int'>\n",
+            "0.85 <class 'float'>\n",
+            "True <class 'bool'>\n",
+            "Trafo Distribusi <class 'str'>\n",
+            "(4+3j) <class 'complex'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nama_unit = \"PLTS Nunukan\"\n",
+        "jumlah_panel = 240\n",
+        "tegangan_keluaran = 48.5\n",
+        "sedang_beroperasi = True\n",
+        "\n",
+        "print(nama_unit,type(nama_unit))\n",
+        "print(jumlah_panel,type(jumlah_panel))\n",
+        "print(tegangan_keluaran,type(tegangan_keluaran))\n",
+        "print(sedang_beroperasi,type(sedang_beroperasi))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "M8DPv3KdbNj3",
+        "outputId": "45de8d88-5a3d-4b7f-d8d0-2c7d18770f38"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "PLTS Nunukan <class 'str'>\n",
+            "240 <class 'int'>\n",
+            "48.5 <class 'float'>\n",
+            "True <class 'bool'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tegangan_harian = [21.5,219.0,220.3,218.7,221.1,216.9]\n",
+        "\n",
+        "# (a) cetak pembacaan pertama dan terakhir memakai indeks\n",
+        "print(\"pembacaan pertama:\",tegangan_harian[0])\n",
+        "print(\"pembacaan terakhir:\",tegangan_harian[-1])\n",
+        "\n",
+        "# (b) tambahkan satu pembacaan baru 222.0 dengan append()\n",
+        "tegangan_harian.append(222.0)\n",
+        "print(tegangan_harian)\n",
+        "\n",
+        "# (c) cetak jumlah total jumlah data dengan len()\n",
+        "print(\"jumlah data:\",len(tegangan_harian))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zUfs12vph-j0",
+        "outputId": "d36cc493-7695-4cc6-cc2e-2cea62a7a271"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "pembacaan pertama: 21.5\n",
+            "pembacaan terakhir: 216.9\n",
+            "[21.5, 219.0, 220.3, 218.7, 221.1, 216.9, 222.0]\n",
+            "jumlah data: 7\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1 membuat dictionary spesifikasi autor listrik\n",
+        "motor_listrik = {\n",
+        "\n",
+        "}\n",
+        "\n",
+        ""
+      ],
+      "metadata": {
+        "id": "Ea0OGp3KoTY1"
+      },
+      "execution_count": 18,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "0xfUdIq-smdo"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
